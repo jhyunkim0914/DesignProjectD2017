@@ -169,7 +169,7 @@ public class HomeController {
 	@RequestMapping(value = "/grouplistview", method = RequestMethod.GET)
 	public String viewGroupList(Model model) {
 		if(user.getRole().equals("customer")) {
-			logger.info("그룹 결성 페이지 로딩");
+			logger.info("그룹 리스트 페이지 로딩");
 			List<GroupInfoVO> groupList = groupinfodao.getGroupListByCustomerId(user.getId());
 			model.addAttribute("groupList", groupList);
 			
@@ -180,13 +180,13 @@ public class HomeController {
 		return "error";
 	}
 	
-	@RequestMapping(value = "/makegroup", method = RequestMethod.GET)
+	@RequestMapping(value = "/makegroupview", method = RequestMethod.GET)
 	public String viewMakeGroup(Model model) {
 		if(user.getRole().equals("customer")) {
 			logger.info("그룹 결성 페이지 로딩");
 			
 			
-			return "grouplist";
+			return "makegroupview";
 		}
 			
 		
