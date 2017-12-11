@@ -7,10 +7,8 @@ package org.zerock.controller;
 import javax.inject.Inject;
 
 import org.junit.Test;
-import org.zerock.domain.MemberVO;
-import org.zerock.persistence.CustomerDAO;
-import org.zerock.persistence.GroupInfoDAO;
-import org.zerock.persistence.MemberDAO;
+import org.zerock.domain.*;
+import org.zerock.persistence.*;
 
 public class MemberDAOImplTest extends AbstractTest{
 
@@ -53,6 +51,8 @@ public class MemberDAOImplTest extends AbstractTest{
 	
 	@Test
 	public void getListTest(){
+		
+		logger.info(""+customerdao.getList());
 		logger.info(""+dao.getList());
 	}
 	

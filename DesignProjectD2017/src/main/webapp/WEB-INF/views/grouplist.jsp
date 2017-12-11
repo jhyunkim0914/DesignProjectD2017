@@ -7,11 +7,22 @@
 <title>자왜점</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+ <link rel='stylesheet' href='stylesheets/style.css'/>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <!-- 인클루드 top -->
     <%@ include file="./top/top.jspf" %>
 
+<div id ="mynav">
+     <ul class="sidenav">
+          <li><a class="active" href="#">초대하기</a></li>
+          <li><a href="#">ON/OFF</a></li>
+
+          <li><a href="#">주문하기</a></li>
+          <li><a href="#">정보보기</a></li>
+     </ul>
+</div>
 
 <!-- 게시물 리스트 보여주기 -->
 <div class="container">

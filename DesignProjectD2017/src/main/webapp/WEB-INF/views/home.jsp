@@ -17,7 +17,7 @@
 <div class="container">
 	시작 페이지
     <div class="huge-top">
-        <button class="btn btn-normal pull-right" id="insert" onclick="location.href = '/grouplistview' ">그룹결성</button>
+        <button class="btn btn-normal pull-right" id="insert" onclick="location.href = '/grouplistview' ">그룹보기</button>
     </div>
 </div>
 

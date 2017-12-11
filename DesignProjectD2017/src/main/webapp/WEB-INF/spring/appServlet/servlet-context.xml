@@ -24,6 +24,10 @@
 	<!-- base-package -->
 	<context:component-scan base-package="org.zerock.controller" />
 	
+	<resources mapping="/stylesheets/**" location="/resources/stylesheets/" /> 
+	<resources mapping="/images/**" location="/resources/images/" /> 
+	<resources mapping="/javascripts/**" location="/resources/javascripts/" /> 
+	<resources mapping="/fonts/**" location="/resources/fonts" />
 	
 	
 </beans:beans>

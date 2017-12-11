@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='public/stylesheets/style.css'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+  <script>
+
+        $(document).ready(function() {
+
+
+              $("#notleadermenu").hide(); // if문으로 리더인지 아닌지에 따라 리더메뉴 비리더메뉴 숨기기
+              $(".button").click(function(){
+                      $('form[name=orderinfo]').submit();
+                      console.log("wow");
+              });
+              //라디오버튼 체크된 값 가져오는 소스
+              //var checkedValue = $("input[type=radio][name=rdoName]:checked").val()
+
+
+
+      });
+
+
+  </script>
+
+
+
+  <!--맨위에 우리꺼 로고 -->
+  <div id ="maintitle"><image src ='public/images/logo2.png' width='300px' height='auto'/></div>
+
+  <!-- 메뉴버튼-->
+  <div id ="mynav">
+     <ul class="sidenav">
+          <li><a class="active" href="#">초대하기</a></li>
+          <li><a href="#">ON/OFF</a></li>
+      <!--    <li><a href="#">home</a></li> -->
+          <li><a href="#">주문하기</a></li>
+          <li><a href="#">정보보기</a></li>
+     </ul>
+</div>
+  <div id= "underbar_info"><br/>조회하기</div>
+
+
+
+
+    <div id="content"> <br/>
+
+        <div id="customerinfo">
+          <p class="infotitle">개인정보</p>
+          이름 : 김정은<br/><br/>
+          좋아하는음식 : 양식 <br/><br/>
+          이메일 : bfghg@naver.com <br/><br/>
+        </div>
+
+        <div id="orderinfo">
+            <p class="infotitle">주문내역</p>
+          <table class="sub_news" border="1" cellspacing="0" summery="주문정보">
+            <colgroup>
+              <col>
+              <col width="110">
+              <col width="100">
+              <col width="80">
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col">업체이름</th>
+                <th scope="col">날짜</th>
+                <th scope="col">총금액</th>
+                <th scope="col">리뷰</th>
+
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+              	<td class="tdtitle">
+              	짬뽕타임
+              	<td class="tdname">2017/08/22</td>
+              	<td class="tddate">14000원</td><!--0에서 n까지 업체리스트 중 선택-->
+              	<td class="tdhit"><a href="flag.html" onclick='window.open("review.html", "reviewpop","width=300, height=400, scrollbars= 0, toolbar=0, menubar=no");return false;' target="_blank">
+                  보기</a></td></td>
+              </tr>
+
+            </tbody>
+
+        </table>
+      </div>
+
+
+
+
+    </div>
+
+    <div id ="footer"></div>
+
+
+
+
+
+  </body>
+
+</html>
