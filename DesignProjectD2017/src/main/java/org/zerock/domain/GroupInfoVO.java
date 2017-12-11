@@ -14,6 +14,26 @@ public class GroupInfoVO {
     private Integer totalDailyFavor;
 
     private Integer companyId;
+    
+    private Integer customeridx;
+
+    private String isleader;
+
+	public Integer getCustomeridx() {
+		return customeridx;
+	}
+
+	public void setCustomeridx(Integer customeridx) {
+		this.customeridx = customeridx;
+	}
+
+	public String getIsleader() {
+		return isleader;
+	}
+
+	public void setIsleader(String isleader) {
+		this.isleader = isleader;
+	}
 
 	public Integer getGroupidx() {
 		return groupidx;
@@ -75,8 +95,9 @@ public class GroupInfoVO {
 	public String toString() {
 		return "GroupInfoVO [groupidx=" + groupidx + ", name=" + name + ", groupState=" + groupState + ", startTime="
 				+ startTime + ", endTime=" + endTime + ", totalDailyFavor=" + totalDailyFavor + ", companyId="
-				+ companyId + "]";
+				+ companyId + ", customeridx=" + customeridx + ", isleader=" + isleader + "]";
 	}
-    
+
+   
     
 }

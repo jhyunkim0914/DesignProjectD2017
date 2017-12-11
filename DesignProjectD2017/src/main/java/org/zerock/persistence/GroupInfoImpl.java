@@ -40,4 +40,5 @@ public class GroupInfoImpl implements GroupInfoDAO{
 	public List<GroupInfoVO> getGroupListByCustomerId(String customerId) {
 		return sqlSession.selectList(namespace + ".getGroupListByCustomerId", customerId);
 	}
+
 }

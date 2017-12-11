@@ -11,8 +11,8 @@
 	</select>
 	
 	<insert id="register">
-		insert into customer(id, password, name, email)
-		values( #{id} , #{password}, #{name}, #{email} );
+		insert into groupinfo(name, group_state)
+		values( #{name}, #{groupState} );
 	</insert>
 	
 	<!-- 
@@ -23,15 +23,16 @@
 			</typeAliases>		
 	-->
 	<select id="get" resultType="org.zerock.domain.GroupInfoVO">
-		select  *
-		from customer
-		where id = #{id}
+        SELECT gm.groupidx, gm.customeridx, gm.isleader, g.name, g.group_state, g.start_time, g.end_time, g.total_daily_favor, g.company_id
+		  FROM groupmember gm, groupinfo g
+		 WHERE gm.groupidx = g.groupidx and g.groupidx = #{groupidx}
 	
 	</select>
 	
 	<select id="getList" resultType="org.zerock.domain.GroupInfoVO">
-		select *
-		from customer
+        SELECT gm.groupidx, gm.customeridx, gm.isleader, g.name, g.group_state, g.start_time, g.end_time, g.total_daily_favor, g.company_id
+		  FROM groupmember gm, groupinfo g
+		 WHERE gm.groupidx = g.groupidx
 	</select>
 	
 	<select id="getGroupListByCustomerId" resultType="org.zerock.domain.GroupInfoVO">
@@ -39,4 +40,6 @@
 		  FROM groupmember gm, groupinfo g, customer c 
 		 WHERE gm.groupidx = g.groupidx and gm.customeridx = c.customeridx and c.id = #{customerId}
 	</select>
+	
+
 </mapper>

@@ -190,13 +190,55 @@ public class HomeController {
 		return "error";
 	}
 	
+	//그룹 결성 페이지 로딩
 	@RequestMapping(value = "/makegroupview", method = RequestMethod.GET)
 	public String viewMakeGroup(Model model) {
 		if(user.getRole().equals("customer")) {
 			logger.info("그룹 결성 페이지 로딩");
 			
+			List<CustomerVO> customerList = customerdao.getList();
+			
+			model.addAttribute("customerList", customerList);
 			
 			return "makegroupview";
+		}
+			
+		
+		return "error";
+	}
+	
+	//그룹 
+	@RequestMapping(value = "/inviteCustomers", method = RequestMethod.GET)
+	public String inviteCustomers(@RequestParam("check") List<String> check, Model model) {
+		if(user.getRole().equals("customer")) {
+			logger.info("그룹 결성 insert 전달");
+			logger.info(check.toString());
+
+			GroupInfoVO vo = new GroupInfoVO();
+			vo.setName("temp");
+			vo.setGroupState("NOTCONFIRM");
+			groupinfodao.register(vo);
+			
+			int groupidx = groupinfodao.getGroupListByCustomerId(user.getId()).get(0).getGroupidx();
+
+			//에러부분
+			
+			vo.setGroupidx(groupidx);
+			vo.setCustomeridx(user.getIdx());
+			vo.setIsleader("YES");
+			groupinfodao.register(vo);
+			
+			vo.setGroupidx(groupidx);
+			for(int i=0; i<check.size(); i++) {
+				GroupInfoVO vo2 = new GroupInfoVO();
+				vo2.setGroupidx(groupidx);
+				vo2.setCustomeridx(customerdao.get(check.get(i)).getCustomeridx());
+				vo2.setIsleader("NO");
+				//groupinfodao.registerGroupMember(vo2);
+			}
+			
+			
+			return "completeInvite";
 		}
 			
 		

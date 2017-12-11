@@ -33,6 +33,7 @@
         </select>
         <input type='text' name='usersearch' style = "width:200px; height:25px;"><button class ="search">검색</button><br/><br/></div><!--온클릭이벤트 제이쿼리써서 출력-->
         <p class="searchtitle">검색결과</p>
+        <form action="/inviteCustomers">
         <table class="sub_news" border="1" cellspacing="0" summery="게시판 글제목 리스트">
             <colgroup>
               <col width="100">
@@ -42,7 +43,6 @@
 
             <thead>
               <tr>
-
                 <th scope="col">이름</th>
                 <th scope="col">이메일</th>
                 <th scope="col">선택</th>
@@ -50,22 +50,23 @@
             </thead>
 
             <tbody>
-              <tr>
-              	<td class="tdname">김민경</td>
-              	<td class="tddate">abcdef@gmail.om</td>
-                <td class="hit"><input type="checkbox" name="check" value="user_id" checked></td>
-
-              </tr>
-
+            	<c:forEach var="item" items="${customerList}" varStatus="status">
+					<tr>
+						<td class="tdname">${item.name}</td>
+						<td class="tddate">${item.email}</td>
+					  	<td class="hit"><input type="checkbox" name="check" value="${item.id}"></td>
+					</tr>
+				</c:forEach>
             </tbody>
 
         </table>
-
+		
         <p class="searchtitle">초대리스트 <img src ="public/images/refresh.png" width="20" id= "refresh" /></p>
         김민경, 김정은, 김재현, 정현희 총 4명을 추가했습니다<br/><br/><br/>
 
 
           <button class="searchbutton">초대하겠습니다</button>
+          </form>
     </div>
 	
     <div class="huge-top">
