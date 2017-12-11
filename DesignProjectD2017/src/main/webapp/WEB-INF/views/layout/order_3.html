@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='public/stylesheets/style.css'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+  <script>
+
+        $(document).ready(function() {
+
+
+              $(".button").click(function(){
+                      $('form[name=orderinfo]').submit();
+                      console.log("wow");
+              });
+              //라디오버튼 체크된 값 가져오는 소스
+              //var checkedValue = $("input[type=radio][name=rdoName]:checked").val()
+
+
+
+      });
+
+
+  </script>
+
+
+
+  <!--맨위에 우리꺼 로고 -->
+  <div id ="maintitle"><image src ='public/images/logo2.png' width='300px' height='auto'/></div>
+
+  <!-- 메뉴버튼-->
+  <div id ="mynav">
+     <ul class="sidenav">
+          <li><a class="active" href="#">초대하기</a></li>
+          <li><a href="#">ON/OFF</a></li>
+          <li><a href="#">home</a></li>
+          <li><a href="#">주문하기</a></li>
+          <li><a href="#">정보보기</a></li>
+     </ul>
+</div>
+  <div id= "underbar"><br/>주문하기 STEP 3 : 메뉴를 선택합니다</div>
+
+
+
+
+    <div id="content"> <br/>
+      <table class="sub_news" border="1" cellspacing="0" summery="메뉴 리스트">
+          <colgroup>
+            <col>
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th scope="col">이름</th>
+              <th scope="col">가격</th>
+              <th scope="col">사진</th>
+              <th scope="col">선택하기</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="tdtitle">짜장면</td>
+              <td class="tdname">4000원</td>
+              <td class="menuimage"><image src= "public/images/jjajang.jpg"/ width="80"></td>
+              <td class="tddate"><input type="radio" name="select" value="0"></td>
+            </tr>
+
+            <tr>
+              <td class="tdtitle">짬뽕</td>
+              <td class="tdname">5000원</td>
+              <td class="menuimage"><image src= "public/images/jjajang.jpg"/ width="80"></td>
+              <td class="tddate"><input type="radio" name="select" value="1"></td>
+            </tr>
+
+          </tbody>
+
+      </table>
+
+
+          <button class="button">이 메뉴로 할게요</button>
+      </div>
+
+
+
+
+
+
+    </div>
+
+    <div id ="footer"></div>
+
+
+
+
+
+  </body>
+
+</html>

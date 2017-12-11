@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='public/stylesheets/style.css'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+  <script>
+
+        $(document).ready(function() {
+
+              $("#notleadermenu").hide();
+              $(".button").click(function(){
+                      $('form[name=orderinfo]').submit();
+                      console.log("wow");
+              });
+              //라디오버튼 체크된 값 가져오는 소스
+              //var checkedValue = $("input[type=radio][name=rdoName]:checked").val()
+
+
+
+      });
+
+
+  </script>
+
+
+
+  <!--맨위에 우리꺼 로고 -->
+  <div id ="maintitle"><image src ='public/images/logo2.png' width='300px' height='auto'/></div>
+
+  <!-- 메뉴버튼-->
+  <div id ="mynav">
+     <ul class="sidenav">
+          <li><a class="active" href="#">초대하기</a></li>
+          <li><a href="#">ON/OFF</a></li>
+          <li><a href="#">home</a></li>
+          <li><a href="#">주문하기</a></li>
+          <li><a href="#">정보보기</a></li>
+     </ul>
+</div>
+  <div id= "underbar"><br/>주문하기 STEP 5 : 피드백하기</div>
+
+
+
+
+    <div id="content"> <br/>
+        별점을 입력해주세요<br>
+         <input type="radio" name="starpoint"  value="0">☆☆☆☆☆
+         <input type="radio" name="starpoint"  value="1">★☆☆☆☆
+         <input type="radio" name="starpoint"  value="2">★★☆☆☆
+         <input type="radio" name="starpoint"  value="3">★★★☆☆
+         <input type="radio" name="starpoint"  value="4">★★★★☆
+         <input type="radio" name="starpoint"  value="5">★★★★★   <br/>
+         <br/><br/><button class="button">입력완료</button>
+    </div>
+
+    <div id ="footer"></div>
+
+
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='public/stylesheets/style.css'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+  <script>
+
+        $(document).ready(function() {
+
+              $(".button").click(function(){
+                      $('form[name=orderinfo]').submit();
+                      console.log("wow");
+              });
+
+
+
+      });
+
+
+  </script>
+
+
+
+  <!--맨위에 우리꺼 로고 -->
+  <div id ="maintitle"><image src ='public/images/logo2.png' width='300px' height='auto'/></div>
+
+  <!-- 메뉴버튼-->
+  <div id ="mynav">
+     <ul class="sidenav">
+          <li><a class="active" href="#">초대하기</a></li>
+          <li><a href="#">ON/OFF</a></li>
+          <li><a href="#">home</a></li>
+          <li><a href="#">주문하기</a></li>
+          <li><a href="#">정보보기</a></li>
+     </ul>
+</div>
+  <div id= "underbar"><br/>주문하기 STEP 1 : 필수정보를 입력해주세요</div>
+
+
+
+
+    <div id ="content"> <br/>
+      <form name = "orderinfo"  method="post" action="order_2.html" >
+        시간(24시기준) <input type='text' name='hour' style="text-align:center; width:30px;">시
+        <input type='text' name='min' style = "text-align:center; width:30px;">분 까지 배달해주세요<br/><br/>
+        오늘은
+        <select>
+          <option value="korean" >한식</option>
+          <option value="italian">양식</option>
+          <option value="japan">일식</option>
+          <option value="china">중식</option>
+        </select> 이 땡기는군요 <br/><br/>
+
+      </form>
+        <button class="button">다음으로 넘어갈까요?</button>
+
+
+
+
+    </div>
+
+    <div id ="footer"></div>
+
+
+
+
+
+  </body>
+
+</html>

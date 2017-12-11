@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='public/stylesheets/style.css'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+  <script>
+
+        $(document).ready(function() {
+
+              $("#notleadermenu").hide(); // if문으로 리더인지 아닌지에 따라 리더메뉴 비리더메뉴 숨기기
+              $(".button").click(function(){
+                      $('form[name=orderinfo]').submit();
+                      console.log("wow");
+              });
+              //라디오버튼 체크된 값 가져오는 소스
+              //var checkedValue = $("input[type=radio][name=rdoName]:checked").val()
+
+
+
+      });
+
+
+  </script>
+
+
+
+  <!--맨위에 우리꺼 로고 -->
+  <div id ="maintitle"><image src ='public/images/logo2.png' width='300px' height='auto'/></div>
+
+  <!-- 메뉴버튼-->
+  <div id ="mynav">
+     <ul class="sidenav">
+          <li><a class="active" href="#">초대하기</a></li>
+          <li><a href="#">ON/OFF</a></li>
+          <li><a href="#">home</a></li>
+          <li><a href="#">주문하기</a></li>
+          <li><a href="#">정보보기</a></li>
+     </ul>
+</div>
+  <div id= "underbar"><br/>주문하기 STEP 3 : 메뉴를 선택합니다</div>
+
+
+
+
+    <div id="content"> <br/>
+
+          <div id="leadermenu">
+            ************ 메뉴를 확인합니다 ************</br>
+            총 금액 : <%=다 더해서 출력> 원</br>
+            주문 메뉴 : 탕수육(0), 짬뽕(3), 짜장면(1)</br>
+            *****************************************</br>
+
+              <button class="button">주문하기</button>
+          </div>
+
+
+          <div id="notleadermenu"><br/>
+            현재 그룹장이 주문중입니다. 주문이 완료되면 버튼이 자동으로 나타납니다.<br/>
+            <button class="button">다음으로 넘어갈까요?</button>
+
+          </div>
+
+      </div>
+
+
+
+
+
+
+
+    <div id ="footer"></div>
+
+
+
+
+
+  </body>
+
+</html>

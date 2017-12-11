@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='public/stylesheets/style.css'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+  <script>
+
+        $(document).ready(function() {
+
+
+              $("#alermimage img").onclick(){
+
+                //조건문으로 flag 조사해서 알람이미지 바꾸고 상태 반대로 바꿔서 post로 쏘기
+
+              }
+      });
+
+
+  </script>
+
+
+
+  <!--맨위에 우리꺼 로고 -->
+  <div id ="maintitle"><image src ='public/images/logo2.png' width='300px' height='auto'/></div>
+
+  <!-- 메뉴버튼-->
+  <div id ="mynav">
+     <ul class="sidenav">
+          <li><a class="active" href="#">초대하기</a></li>
+          <li><a href="#">ON/OFF</a></li>
+          <li><a href="#">home</a></li>
+          <li><a href="#">주문하기</a></li>
+          <li><a href="#">정보보기</a></li>
+     </ul>
+</div>
+  <div id= "underbar"><br/>끼니를 함께할 것인지 선택해주세요</div>
+
+
+
+    <div id ="content"> <br/>
+      <div id = "alermimage"><img src ="public/images/alermimage.png" width='100px' /></div><br/><br/>
+      <div id = "contitle">현재 그룹 초대 검색 <%=participation_flag> 상태 입니다<br/>
+
+      </div>
+
+
+    </div>
+
+    <div id ="footer"></div>
+
+
+
+
+
+  </body>
+
+</html>
