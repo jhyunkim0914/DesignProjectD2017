@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.zerock.domain.GroupInfoVO;
 
 @Repository
-public class GroupInfoImpl implements GroupInfoDAO{
+public class GroupInfoDAOImpl implements GroupInfoDAO{
 	@Inject
 	private SqlSession sqlSession;
 	
@@ -22,8 +22,8 @@ public class GroupInfoImpl implements GroupInfoDAO{
 	}
 
 	@Override
-	public void register(GroupInfoVO vo) {
-		sqlSession.insert(namespace + ".register", vo);
+	public Integer register(GroupInfoVO vo) {
+		return sqlSession.insert(namespace + ".register", vo);
 	}
 
 	@Override
@@ -39,6 +39,11 @@ public class GroupInfoImpl implements GroupInfoDAO{
 	@Override
 	public List<GroupInfoVO> getGroupListByCustomerId(String customerId) {
 		return sqlSession.selectList(namespace + ".getGroupListByCustomerId", customerId);
+	}
+	
+	@Override
+	public void registerGroupMember(GroupInfoVO vo) {
+		sqlSession.insert(namespace + ".registerGroupMember", vo);
 	}
 
 }

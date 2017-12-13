@@ -13,27 +13,11 @@ public class GroupInfoVO {
 
     private Integer totalDailyFavor;
 
-    private Integer companyId;
+    private Integer companyidx;
     
     private Integer customeridx;
 
     private String isleader;
-
-	public Integer getCustomeridx() {
-		return customeridx;
-	}
-
-	public void setCustomeridx(Integer customeridx) {
-		this.customeridx = customeridx;
-	}
-
-	public String getIsleader() {
-		return isleader;
-	}
-
-	public void setIsleader(String isleader) {
-		this.isleader = isleader;
-	}
 
 	public Integer getGroupidx() {
 		return groupidx;
@@ -83,21 +67,38 @@ public class GroupInfoVO {
 		this.totalDailyFavor = totalDailyFavor;
 	}
 
-	public Integer getCompanyId() {
-		return companyId;
+	public Integer getCompanyidx() {
+		return companyidx;
 	}
 
-	public void setCompanyId(Integer companyId) {
-		this.companyId = companyId;
+	public void setCompanyidx(Integer companyidx) {
+		this.companyidx = companyidx;
+	}
+
+	public Integer getCustomeridx() {
+		return customeridx;
+	}
+
+	public void setCustomeridx(Integer customeridx) {
+		this.customeridx = customeridx;
+	}
+
+	public String getIsleader() {
+		return isleader;
+	}
+
+	public void setIsleader(String isleader) {
+		this.isleader = isleader;
 	}
 
 	@Override
 	public String toString() {
 		return "GroupInfoVO [groupidx=" + groupidx + ", name=" + name + ", groupState=" + groupState + ", startTime="
-				+ startTime + ", endTime=" + endTime + ", totalDailyFavor=" + totalDailyFavor + ", companyId="
-				+ companyId + ", customeridx=" + customeridx + ", isleader=" + isleader + "]";
+				+ startTime + ", endTime=" + endTime + ", totalDailyFavor=" + totalDailyFavor + ", companyidx="
+				+ companyidx + ", customeridx=" + customeridx + ", isleader=" + isleader + "]";
 	}
-
+    
+    
    
     
 }

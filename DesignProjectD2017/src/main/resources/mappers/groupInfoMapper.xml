@@ -10,9 +10,12 @@
 		select now()   <!-- 세미콜론 쓰면 안됨 -->
 	</select>
 	
-	<insert id="register">
+	<insert id="register" parameterType="org.zerock.domain.GroupInfoVO">
 		insert into groupinfo(name, group_state)
 		values( #{name}, #{groupState} );
+		<selectKey resultType="Integer" keyProperty="groupidx" order="AFTER">
+        SELECT LAST_INSERT_ID()
+    	</selectKey> 
 	</insert>
 	
 	<!-- 
@@ -40,6 +43,11 @@
 		  FROM groupmember gm, groupinfo g, customer c 
 		 WHERE gm.groupidx = g.groupidx and gm.customeridx = c.customeridx and c.id = #{customerId}
 	</select>
+	
+	<insert id="registerGroupMember">
+      insert into groupmember(groupidx, customeridx, isleader)
+      values(#{groupidx}, #{customeridx}, #{isleader} );
+    </insert>
 	
 
 </mapper>

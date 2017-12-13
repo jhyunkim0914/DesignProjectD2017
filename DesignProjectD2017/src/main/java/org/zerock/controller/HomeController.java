@@ -217,24 +217,21 @@ public class HomeController {
 			GroupInfoVO vo = new GroupInfoVO();
 			vo.setName("temp");
 			vo.setGroupState("NOTCONFIRM");
-			groupinfodao.register(vo);
-			
-			int groupidx = groupinfodao.getGroupListByCustomerId(user.getId()).get(0).getGroupidx();
+			int state = groupinfodao.register(vo);
+			int groupidx = vo.getGroupidx();
+			System.out.println(groupidx + "에" + state + "입력");
 
 			//에러부분
-			
-			vo.setGroupidx(groupidx);
 			vo.setCustomeridx(user.getIdx());
 			vo.setIsleader("YES");
-			groupinfodao.register(vo);
+			groupinfodao.registerGroupMember(vo);
 			
-			vo.setGroupidx(groupidx);
 			for(int i=0; i<check.size(); i++) {
 				GroupInfoVO vo2 = new GroupInfoVO();
 				vo2.setGroupidx(groupidx);
 				vo2.setCustomeridx(customerdao.get(check.get(i)).getCustomeridx());
 				vo2.setIsleader("NO");
-				//groupinfodao.registerGroupMember(vo2);
+				groupinfodao.registerGroupMember(vo2);
 			}
 			
 			
